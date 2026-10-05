@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Hunter - Coding Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <header class="header">
+            <div>
+                <h1>🐛 Bug Hunter</h1>
+                <p>Find the bug. Fix your score.</p>
+            </div>
+
+            <button id="restartBtn" class="restart-btn">↻ Restart</button>
+        </header>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span>🏆 Score</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>❤️ Lives</span>
+                <strong id="lives">3</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>🔥 Streak</span>
+                <strong id="streak">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>⏱️ Time</span>
+                <strong id="timer">20</strong>
+            </div>
+        </div>
+
+        <div class="progress-area">
+            <div class="progress-info">
+                <span>Question</span>
+                <span><span id="questionNumber">1</span> / 10</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+        </div>
+
+        <main class="game-card">
+
+            <div class="question-header">
+                <span class="badge">🐛 FIND THE BUG</span>
+                <span id="difficulty" class="difficulty">Easy</span>
+            </div>
+
+            <h2 id="question">
+                Which line contains the bug?
+            </h2>
+
+            <div class="code-window">
+
+                <div class="code-header">
+                    <div class="window-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span id="language">JavaScript</span>
+                </div>
+
+                <pre id="code"></pre>
+
+            </div>
+
+            <p class="instruction">
+                Select the line that contains the bug.
+            </p>
+
+            <div id="answers" class="answers"></div>
+
+            <div id="message" class="message"></div>
+
+        </main>
+
+        <footer>
+            <p>💻 Bug Hunter • A simple coding game</p>
+        </footer>
+
+    </div>
+
+    <div id="gameOver" class="game-over hidden">
+
+        <div class="game-over-card">
+
+            <div class="result-icon">🏆</div>
+
+            <h2>Game Complete!</h2>
+
+            <p>You finished the challenge.</p>
+
+            <div class="final-score">
+                <span>Your Score</span>
+                <strong id="finalScore">0</strong>
+            </div>
+
+            <div class="result-stats">
+                <div>
+                    <strong id="finalCorrect">0</strong>
+                    <span>Correct</span>
+                </div>
+
+                <div>
+                    <strong id="finalWrong">0</strong>
+                    <span>Wrong</span>
+                </div>
+
+                <div>
+                    <strong id="finalBest">0</strong>
+                    <span>Best</span>
+                </div>
+            </div>
+
+            <button id="playAgainBtn" class="play-again">
+                🎮 Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

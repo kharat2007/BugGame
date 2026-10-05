@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1120;
+    color: #f8fafc;
+    min-height: 100vh;
+}
+
+.game-container {
+    width: 92%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #94a3b8;
+}
+
+.restart-btn {
+    background: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+    padding: 11px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.restart-btn:hover {
+    background: #334155;
+}
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-box {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 14px;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-box span {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.stat-box strong {
+    font-size: 22px;
+}
+
+/* PROGRESS */
+
+.progress-area {
+    margin-bottom: 25px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 7px;
+    background: #1e293b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 10%;
+    background: #22c55e;
+    transition: width 0.3s ease;
+}
+
+/* GAME CARD */
+
+.game-card {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.badge {
+    background: #172554;
+    color: #60a5fa;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.difficulty {
+    color: #4ade80;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.question-header + h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* CODE */
+
+.code-window {
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.code-header {
+    background: #0f172a;
+    padding: 12px 16px;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.window-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.window-buttons span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #475569;
+}
+
+pre {
+    padding: 25px;
+    overflow-x: auto;
+    color: #c4b5fd;
+    line-height: 1.8;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 15px;
+}
+
+.instruction {
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+/* ANSWERS */
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.answer-btn {
+    background: #172033;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.answer-btn:hover {
+    background: #1e293b;
+    border-color: #64748b;
+}
+
+.answer-btn.correct {
+    background: #064e3b;
+    border-color: #22c55e;
+    color: #86efac;
+}
+
+.answer-btn.wrong {
+    background: #450a0a;
+    border-color: #ef4444;
+    color: #fca5a5;
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* MESSAGE */
+
+.message {
+    min-height: 30px;
+    text-align: center;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.message.correct-message {
+    color: #4ade80;
+}
+
+.message.wrong-message {
+    color: #f87171;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+/* GAME OVER */
+
+.game-over {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-over-card {
+    width: 100%;
+    max-width: 450px;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.game-over-card h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.game-over-card > p {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+.final-score {
+    background: #020617;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.final-score span {
+    display: block;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.final-score strong {
+    font-size: 42px;
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.result-stats div {
+    background: #172033;
+    padding: 15px 8px;
+    border-radius: 10px;
+}
+
+.result-stats strong {
+    display: block;
+    font-size: 20px;
+}
+
+.result-stats span {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.play-again {
+    width: 100%;
+    border: none;
+    background: #22c55e;
+    color: #022c22;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.play-again:hover {
+    background: #4ade80;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .game-container {
+        width: 94%;
+        padding: 20px 0;
+    }
+
+    .header {
+        align-items: flex-start;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .restart-btn {
+        padding: 9px 12px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .game-card {
+        padding: 20px;
+    }
+
+    .question-header + h2 {
+        font-size: 20px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    pre {
+        font-size: 13px;
+        padding: 18px;
+    }
+}
